@@ -1,6 +1,6 @@
 drop database if exists ad_lister_db;
-create database if not exists adlister_db;
-use adlister_db;
+create database if not exists ad_lister_db;
+use ad_lister_db;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
@@ -38,5 +38,12 @@ CREATE TABLE IF NOT EXISTS ads_categories (
     FOREIGN KEY (category_id) REFERENCES categories (category_id)
 );
 
+INSERT INTO categories (category_desc) values
+
+('Jobs'),
+('Cars'),
+('Toys'),
+('Games'),
+('Services');
 
 
