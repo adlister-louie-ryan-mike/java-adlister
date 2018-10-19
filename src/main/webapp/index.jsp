@@ -10,6 +10,15 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Welcome to the Adlister!</h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Jobs</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
