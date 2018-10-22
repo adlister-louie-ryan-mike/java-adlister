@@ -57,7 +57,7 @@ public class MySQLUsersDao implements Users {
         if (! rs.next()) {
             return null;
         }
-        return new User(
+        return new User (
             rs.getLong("user_id"),
             rs.getString("username"),
             rs.getString("email"),

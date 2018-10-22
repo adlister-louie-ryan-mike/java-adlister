@@ -11,10 +11,46 @@
     <div class="container">
         <h1>Welcome to the Adlister!</h1>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Jobs</h4>
+                        <h4 class="card-title" onclick="window.location='/ads?category=1'">Jobs</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" onclick="window.location='/ads?category=2'">Cars</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" onclick="window.location='/ads?category=3'">Toys</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" onclick="window.location='/ads?category=4'">Games</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" onclick="window.location='/ads?category=5'">Services</h4>
                     </div>
                 </div>
             </div>
