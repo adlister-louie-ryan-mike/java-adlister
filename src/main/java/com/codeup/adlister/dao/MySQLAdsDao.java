@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -83,6 +84,25 @@ public class MySQLAdsDao implements Ads {
                 return extractAd(rs);
         }catch(SQLException e){
             throw new RuntimeException("id not found", e);
+        }
+    }
+
+
+    @Override
+    public List<Ad> searchByAdContains(String search) {
+
+        String searchTermWithWildcards = "%" + search + "%";
+        String query = "SELECT * FROM ads WHERE ads.title LIKE ? OR ads.description LIKE ? ";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, searchTermWithWildcards);
+            stmt.setString(2, searchTermWithWildcards);
+           List<Ad> ads = createAdsFromResults(stmt.executeQuery());
+            System.out.println(ads);
+           return ads;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error finding your results", e);
         }
     }
 }
