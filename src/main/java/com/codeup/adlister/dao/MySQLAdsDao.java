@@ -85,4 +85,17 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("id not found", e);
         }
     }
+//    @Override
+//    public Boolean delete(Long userID, Long adID) {
+//        try {
+//            Ad ad = getFromID(adID);
+//            if (ad.createdBy() == userID) {
+//                delete(adID);
+//                return true;
+//            }
+//            return false;
+//        } catch (SQLException e) {
+//            return false;
+//        }
+//    }
 }
