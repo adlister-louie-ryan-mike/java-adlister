@@ -16,13 +16,13 @@
 </head>
 <body>
 
-<c:forEach var="ad" items="${ads}">
+<div var="ad" items="${ad}">
     <div class="col-md-6">
         <h2>${ad.title}</h2>
         <h5>${ad.id}</h5>
         <p>${ad.description}</p>
     </div>
-</c:forEach>
+</div>
 
 
 </body>
