@@ -107,15 +107,8 @@ public class MySQLAdsDao implements Ads {
     }
     @Override
     public List<Ad> searchByAdContainsID(Long search) {
-
-//        User user = (User) request.getSession().getAttribute("user");
-
-//        String searchTermWithWildcards = "%" + search + "%";
-//        String query = "SELECT * FROM ads WHERE ads.user_id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads WHERE ads.user_id =" + search);
-//            stmt.setString(1, search);
-//            stmt.setString(2, searchTermWithWildcards);
             List<Ad> ads = createAdsFromResults(stmt.executeQuery());
             System.out.println(ads);
             return ads;
