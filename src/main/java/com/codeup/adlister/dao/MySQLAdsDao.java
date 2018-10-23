@@ -105,4 +105,21 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error finding your results", e);
         }
     }
+    @Override
+    public List<Ad> searchByAdContainsID(long search) {
+
+        String searchTermWithWildcards = "%" + search + "%";
+        String query = "SELECT * FROM ads WHERE ads.user_id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, searchTermWithWildcards);
+//            stmt.setString(2, searchTermWithWildcards);
+            List<Ad> ads = createAdsFromResults(stmt.executeQuery());
+//            System.out.println(ads);
+            return ads;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error finding your results", e);
+        }
+    }
 }

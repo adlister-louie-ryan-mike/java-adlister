@@ -13,4 +13,6 @@ public interface Ads {
     Ad getFromID(Long id);
 
     List<Ad> searchByAdContains(String search);
+
+    List<Ad> searchByAdContainsID(long search);
 }
