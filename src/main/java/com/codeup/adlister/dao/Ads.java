@@ -17,4 +17,6 @@ public interface Ads {
     List<Ad> searchByAdContainsID(Long search);
 
     void editAd(Ad ad);
+
+    void deleteAd(Ad ad);
 }

@@ -30,7 +30,7 @@ public class EditAdServlet extends HttpServlet {
         Ad updatedAd = DaoFactory.getAdsDao().getFromID(adId);
         updatedAd.setTitle(newTitle);
         updatedAd.setDescription(newDesc);
-        System.out.println(updatedAd.getTitle());
+        System.out.println(updatedAd);
         DaoFactory.getAdsDao().editAd(updatedAd);
         response.sendRedirect("/profile");
 
