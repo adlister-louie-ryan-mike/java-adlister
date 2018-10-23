@@ -14,6 +14,7 @@
     </div>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
+            <a href="/ads/edit/?id=${ad.id}"><button type="button">Edit</button></a>
             <h2>${ad.title}</h2>
             <h5><a href="/ads/?id=${ad.id}">${ad.id}</a></h5>
             <p>${ad.description}</p>
