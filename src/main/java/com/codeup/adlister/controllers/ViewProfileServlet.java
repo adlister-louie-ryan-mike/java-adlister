@@ -18,9 +18,9 @@ public class ViewProfileServlet extends HttpServlet {
             return;
         }
         User user = (User) request.getSession().getAttribute("user");
-        System.out.println( user.getId());
-        System.out.println( user.getPassword());
-        System.out.println( user.getEmail());
+//        System.out.println( user.getId());
+//        System.out.println( user.getPassword());
+//        System.out.println( user.getEmail());
 
 
 //        String param1 = request.getParameter(“id”);
@@ -28,9 +28,9 @@ public class ViewProfileServlet extends HttpServlet {
 //        Ad ad = DaoFactory.getAdsDao().getFromID(ad_id);
 //        request.setAttribute(“ad”, ad);
 //        System.out.println(ad.getTitle());
-//        Long userid = user.getId();
-        request.setAttribute("ads", DaoFactory.getAdsDao().searchByAdContainsID(user.getId()));
-        System.out.println(DaoFactory.getAdsDao().searchByAdContainsID(user.getId()));
+        Long userid =  user.getId();
+        request.setAttribute("ads", DaoFactory.getAdsDao().searchByAdContainsID(userid));
+        System.out.println(DaoFactory.getAdsDao().searchByAdContainsID(userid));
 
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
 

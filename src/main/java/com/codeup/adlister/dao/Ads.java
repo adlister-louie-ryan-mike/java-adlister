@@ -14,5 +14,5 @@ public interface Ads {
 
     List<Ad> searchByAdContains(String search);
 
-    List<Ad> searchByAdContainsID(long search);
+    List<Ad> searchByAdContainsID(Long search);
 }
