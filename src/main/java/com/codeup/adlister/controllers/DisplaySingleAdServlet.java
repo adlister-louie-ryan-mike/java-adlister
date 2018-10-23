@@ -19,5 +19,10 @@ public class DisplaySingleAdServlet extends HttpServlet {
         request.setAttribute("ad", ad);
         System.out.println(ad.getTitle());
         request.getRequestDispatcher("/WEB-INF/ads/ad.jsp").forward(request, response);
+
+        String param2 = request.getParameter("seller");
+
+
+
     }
 }

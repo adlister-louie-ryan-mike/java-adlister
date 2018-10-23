@@ -21,8 +21,16 @@
         <h2>${ad.title}</h2>
         <h5>${ad.id}</h5>
         <p>${ad.description}</p>
+        <p>Seller: ${ad.userId}</p>
     </div>
 </div>
+<%--<div var="seller" items="${seller}">--%>
+    <%--<div class="col-md-6">--%>
+        <%--<h4>${seller.username}</h4>--%>
+        <%--<p>${seller.email}</p>--%>
+    <%--</div>--%>
+<%--</div>--%>
+
 
 
 </body>
