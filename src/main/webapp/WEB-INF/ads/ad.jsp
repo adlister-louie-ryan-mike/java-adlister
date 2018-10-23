@@ -24,12 +24,12 @@
         <p>Seller: ${ad.userId}</p>
     </div>
 </div>
-<%--<div var="seller" items="${seller}">--%>
-    <%--<div class="col-md-6">--%>
-        <%--<h4>${seller.username}</h4>--%>
-        <%--<p>${seller.email}</p>--%>
-    <%--</div>--%>
-<%--</div>--%>
+<div var="seller" items="${seller}">
+    <div class="col-md-6">
+        <h4>${seller.username}</h4>
+        <p>${seller.email}</p>
+    </div>
+</div>
 
 
 
