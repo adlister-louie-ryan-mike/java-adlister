@@ -15,4 +15,6 @@ public interface Ads {
     List<Ad> searchByAdContains(String search);
 
     List<Ad> searchByAdContainsID(Long search);
+
+    void editAd(Ad ad);
 }
