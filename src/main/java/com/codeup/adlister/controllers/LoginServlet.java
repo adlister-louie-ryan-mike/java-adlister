@@ -17,8 +17,10 @@ public class LoginServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
             return;
+        } else {
+            request.getSession().setAttribute("logged_in", false);
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
