@@ -8,4 +8,6 @@ public interface Users {
     User findByUsername(String username);
     Long insert(User user);
     User findUserById(Long userId);
-}
+    List<String> isValid(String passwordhere, String confirmhere, List<String> errorList);
+
+    }
