@@ -33,17 +33,5 @@
     <jsp:include page="/WEB-INF/partials/resnav.jsp">
         <jsp:param name="logged_in" value="${sessionScope.logged_in}"/>
     </jsp:include>
-
-<%--<script>--%>
-    <%--"use strict";--%>
-    <%--let error = document.getElementById("error").innerHTML;--%>
-    <%--// if (error != undefined){--%>
-        <%--console.log(error);--%>
-        <%--alert(error);--%>
-    <%--// }--%>
-
-<%--</script>--%>
-
->>>>>>>>> Temporary merge branch 2
 </body>
 </html>
