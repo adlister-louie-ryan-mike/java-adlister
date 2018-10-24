@@ -15,16 +15,20 @@ import java.io.IOException;
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {
+            request.getSession().setAttribute("logged_in", false);
             response.sendRedirect("/login");
             return;
-        }
-        User user = (User) request.getSession().getAttribute("user");
-        Long userid = user.getId();
-        request.setAttribute("ads", DaoFactory.getAdsDao().searchByAdContainsID(userid));
+        } else {
+
+            request.getSession().setAttribute("logged_in", true);
+            User user = (User) request.getSession().getAttribute("user");
+            Long userid = user.getId();
+            request.setAttribute("ads", DaoFactory.getAdsDao().searchByAdContainsID(userid));
 //        System.out.println(DaoFactory.getAdsDao().searchByAdContainsID(userid));
 
-        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
 
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
