@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
@@ -21,5 +22,8 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
+<jsp:include page="/WEB-INF/partials/resnav.jsp">
+    <jsp:param name="logged_in" value="${sessionScope.logged_in}"/>
+</jsp:include>
 </body>
 </html>
