@@ -11,13 +11,12 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
-        <a href="/profile/edit/?userid=${user.id}">Edit Profile</a>
     </div>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <a href="/ads/edit/?id=${ad.id}"><button type="button">Edit</button></a>
             <h3>${ad.title}</h3>
-            <h4><a href="/ads/?id=${ad.id}&seller=${user.id}">${ad.id}</a></h4>
+            <h4><a href="/ads/?id=${ad.id}">${ad.id}</a></h4>
             <p>${ad.description}</p>
 
             <form action="/profile" method="POST">
