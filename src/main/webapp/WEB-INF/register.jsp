@@ -13,6 +13,7 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
+                <label name ="error" id="error" class="text-red">${error}</label>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -29,5 +30,16 @@
             <input type="submit" class="btn btn-primary btn-block">
         </form>
     </div>
+
+<%--<script>--%>
+    <%--"use strict";--%>
+    <%--let error = document.getElementById("error").innerHTML;--%>
+    <%--// if (error != undefined){--%>
+        <%--console.log(error);--%>
+        <%--alert(error);--%>
+    <%--// }--%>
+
+<%--</script>--%>
+
 </body>
 </html>

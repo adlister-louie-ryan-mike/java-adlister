@@ -17,4 +17,7 @@
     .row{
         width:100%
     }
+    .text-red{
+        color: red;
+    }
 </style>
