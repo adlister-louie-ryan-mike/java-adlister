@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
@@ -61,6 +62,23 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             return Long.valueOf(0);
 //            throw new RuntimeException("Error creating new user");
+        }
+    }
+
+    @Override
+    public void editUser(User user) {
+        try {
+            String insertQuery = "UPDATE users SET username = ?, email = ?, password = ? WHERE user_id = " + user.getId();
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getEmail());
+            stmt.setString(3, user.getPassword());
+            stmt.executeUpdate();
+//            ResultSet rs = stmt.getGeneratedKeys();
+//            rs.next();
+//            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error editing user information.", e);
         }
     }
 
