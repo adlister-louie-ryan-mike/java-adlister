@@ -6,10 +6,12 @@
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
+            <li class="user_out"><a href="/index.jsp">Categories</a></li>
             <li class="user_out"><a href="/ads/create">Create an Ad!</a></li>
             <li class="user_in"><a href="/login">Login</a></li>
             <li class="user_out"><a href="/logout">Logout</a></li>
             <li class="user_in"><a href="/register">Register!</a></li>
+
 
         </ul>
         <form action="/ads/search" method="post" class="col active-cyan-3 active-cyan-4 mb-4">

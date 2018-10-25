@@ -20,6 +20,8 @@
         </div>
     </c:forEach>
 </div>
-
+<jsp:include page="/WEB-INF/partials/resnav.jsp">
+    <jsp:param name="logged_in" value="${sessionScope.logged_in}"/>
+</jsp:include>
 </body>
 </html>
