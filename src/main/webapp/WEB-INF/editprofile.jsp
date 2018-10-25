@@ -20,9 +20,9 @@
     <h1>Please update your information:</h1>
     <form action="/profile/edit/?userid=${user.id}" method="POST">
         <div class="form-group">
-            <label for="username">Username: ${user.username}</label>
-            <input id="username" name="username" class="form-control" type="text" placeholder="${usernameInput}">
-            <label name ="usernameError" id="usernameError" class="text-red">${usernameError}</label>
+            <h3 id="username">Username: ${user.username}</h3>
+            <%--<input id="username" name="username" class="form-control" type="text" placeholder="${usernameInput}">--%>
+            <%--<label name ="usernameError" id="usernameError" class="text-red">${usernameError}</label>--%>
 
         </div>
         <div class="form-group">
@@ -62,36 +62,50 @@
 <script>
 
     //Functions to check that the username is not blank. If the input is empty for a username, the submit button is disabled.
-    let username = document.getElementById("username");
-    let emptyUsername = true;
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
 
-    username.oninput = function(){
-        let usernameInput = document.getElementById("username").value;
-        if(usernameInput.length > 0 ){
+    let emptyEmail = true;
+    let emptyPassword = true;
+
+
+    email.oninput = function(){
+        let emailInput = document.getElementById("email").value;
+        if(emailInput.length > 0 ){
             document.getElementById("submit").removeAttribute("disabled");
-            console.log(emptyUsername);
-            emptyUsername = false;
-            console.log(emptyUsername);
+            console.log(emptyEmail);
+            emptyEmail = false;
+            console.log(emptyEmail);
         }
         else{
-            emptyUsername = true;
+            emptyEmail = true;
         }
     };
 
-    document.getElementById("submit").onmouseover = function(){
-        let usernameInput = document.getElementById("username").value;
-        if(usernameInput.length > 0 ){
-            // document.getElementById("submit").removeAttribute("disabled")
-            console.log(emptyUsername);
-            emptyUsername = false;
-            console.log(emptyUsername);
+    password.oninput = function(){
+        let passwordInput = document.getElementById("password").value;
+        if(passwordInput.length > 0 ){
+            document.getElementById("submit").removeAttribute("disabled");
+            console.log(emptyPassword);
+            emptyPassword = false;
+            console.log(emptyPassword);
         }
         else{
-            emptyUsername = true;
+            emptyPassword = true;
         }
-        if(!emptyUsername){
-            document.getElementById("submit").removeAttribute("disabled")
-        }else{
+    };
+    document.getElementById("submit").onmouseover = function(){
+        let emailInput = document.getElementById("email").value;
+        let passwordInput = document.getElementById("password").value;
+        if(emailInput.length > 0 && passwordInput.length > 0){
+            // document.getElementById("submit").removeAttribute("disabled")
+            let emptyEmail = false;
+            let emptyPassword = false;
+            document.getElementById("submit").removeAttribute("disabled");
+        }
+        else{
+            emptyEmail = true;
+            emptyPassword = true;
             document.getElementById("submit").setAttribute("disabled", "")
         }
     }

@@ -100,7 +100,7 @@ public class RegisterServlet extends HttpServlet {
             badEmail = true;
         }
 
-        //Test if the username is already taken, they error list for the password contains an error,
+        //Test if the username is already taken, the error list for the password contains an error,
         // or if the email is incorrect. If either of these conditions is 'true', then send to the new URL
         if(valid.isEmpty() && !badEmail ){
             // create and save a new user if the password error list is empty and the email conditions are correct
