@@ -66,7 +66,7 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public void editUser(User user) {
+    public Long editUser(User user) {
         try {
             String insertQuery = "UPDATE users SET username = ?, email = ?, password = ? WHERE user_id = " + user.getId();
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
@@ -74,8 +74,12 @@ public class MySQLUsersDao implements Users {
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
             stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
         } catch (SQLException e) {
-            throw new RuntimeException("Error editing user information.", e);
+            return Long.valueOf(0);
+//            throw new RuntimeException("Error editing user information.", e);
         }
     }
 

@@ -15,7 +15,7 @@
                 <div class="card">
                     <img height="100px" width="200px" onclick="window.location='/ads?category=1'" src="images/jobs_pic.jpg" alt="jobs">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=1'">Jobs</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=1'">Jobs</h4>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="card">
                     <img src="images/nsx_car.jpeg" onclick="window.location='/ads?category=2'" height="100px" width="200px" alt="nsx">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=2'">Cars</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=2'">Cars</h4>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 <div class="card">
                     <img src="images/cobra_toy.jpg" onclick="window.location='/ads?category=3'" height="100px" width="200px" alt="cobra">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=3'">Toys</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=3'">Toys</h4>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div class="card">
                     <img src="images/games.jpeg" onclick="window.location='/ads?category=4'" height="100px" width="200px" alt="games">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=4'">Games</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=4'">Games</h4>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="card">
                     <img src="images/services.jpeg" onclick="window.location='/ads?category=5'" height="100px" width="200px" alt="services">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=5'">Services</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=5'">Services</h4>
                     </div>
                 </div>
             </div>

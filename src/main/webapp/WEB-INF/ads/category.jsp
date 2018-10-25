@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: ryanschmid
-  Date: 10/22/18
-  Time: 3:04 PM
+  Date: 10/25/18
+  Time: 11:08 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -17,19 +17,16 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1>Here Are Your Search Results!</h1>
+    <h1>Ads:</h1>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-4">
-            <h3><a href="/ads/?id=${ad.id}&seller=${ad.userId}">${ad.title}</h3>
-            <input id="ad.id" name="ad.id" class="form-control" type="hidden" value="${ad.id}">
+            <h3><a href="/ads/?id=${ad.id}&seller=${ad.userId}"/>${ad.title}</h3>
+            <input id="${ad.id}" name="ad.id" class="form-control" type="hidden" value="${ad.id}">
             <p>${ad.description}</p>
         </div>
     </c:forEach>
 </div>
-<jsp:include page="/WEB-INF/partials/resnav.jsp">
-    <jsp:param name="logged_in" value="${sessionScope.logged_in}"/>
-</jsp:include>
 
 </body>
-</html>
+

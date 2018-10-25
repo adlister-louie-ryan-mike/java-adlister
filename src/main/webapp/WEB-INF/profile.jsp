@@ -10,20 +10,19 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
         <a href="/profile/edit/?userid=${user.id}">Edit Profile</a>
+        <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <a href="/ads/edit/?id=${ad.id}"><button type="button">Edit</button></a>
-            <h3>${ad.title}</h3>
-            <h4><a href="/ads/?id=${ad.id}">${ad.id}</a></h4>
-            <p>${ad.description}</p>
-
+        <div class="col-md-4">
+            <h3><a href="/ads/?id=${ad.id}&seller=${ad.userId}">${ad.title}</h3>
             <form action="/profile" method="POST">
+                <a href="/ads/edit/?id=${ad.id}"><button type="button">Edit</button></a>
                 <input id="ad.id" name="ad.id" class="form-control" type="hidden" value="${ad.id}">
                 <input type="submit" class="btn btn-primary col3" value="Delete Ad">
             </form>
+            <p>${ad.description}</p>
+
         </div>
     </c:forEach>
 <jsp:include page="/WEB-INF/partials/resnav.jsp">

@@ -1,4 +1,5 @@
 package com.codeup.adlister.dao;
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.AdCategory;
 import com.mysql.cj.jdbc.Driver;
 import java.io.FileInputStream;
@@ -38,6 +39,35 @@ public class MySQLAdCategoriesDao implements AdCategories {
             return rs.getLong(1);
         } catch (SQLException e) {
             return Long.valueOf(0);
+        }
+    }
+
+        @Override
+    public void editAdCategory(AdCategory adCategory) {
+            try {
+                String insertQuery = "UPDATE ads_categories SET category_id = ? WHERE ad_id = ?";
+                PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+                stmt.setLong(1, adCategory.getCategoryId());
+                stmt.setLong(2, adCategory.getAdId());
+
+                stmt.executeUpdate();
+//            ResultSet rs = stmt.getGeneratedKeys();
+//            rs.next();
+//            return rs.getLong(1);
+            } catch (SQLException e) {
+                throw new RuntimeException("Error updating ad category.", e);
+            }
+    }
+
+    @Override
+    public void deleteAdCategoryEntry(Long adId) {
+        try {
+            String insertQuery = "DELETE FROM ads_categories WHERE ad_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, adId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting adcategory.", e);
         }
     }
 
