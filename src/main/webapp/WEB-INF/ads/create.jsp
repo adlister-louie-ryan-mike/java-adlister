@@ -55,20 +55,33 @@
             }
         };
 
-        document.getElementById("submit").onmouseover = function(){
-            let titleInput = document.getElementById("title").value;
-            if(titleInput.length > 0 ){
-                // document.getElementById("submit").removeAttribute("disabled")
+        description.oninput = function(){
+            let descInput = document.getElementById("description").value;
+            if(descInput.length > 0 ){
+                document.getElementById("submit").removeAttribute("disabled");
                 console.log(emptyTitle);
                 emptyTitle = false;
                 console.log(emptyTitle);
             }
             else{
-                emptyTitle = true;
+                emptyUsername = true;
             }
-            if(!emptyTitle){
+        };
+
+        document.getElementById("submit").onmouseover = function(){
+            let titleInput = document.getElementById("title").value;
+            let descInput = document.getElementById("description").value;
+            if(titleInput.length > 0 && descInput.length > 0){
+                // document.getElementById("submit").removeAttribute("disabled")
+                console.log(emptyTitle, emptyDescription);
+                emptyTitle = false;
+                emptyDescription = false;
+                console.log(emptyTitle, emptyDescription);
                 document.getElementById("submit").removeAttribute("disabled")
-            }else{
+            }
+            else{
+                emptyTitle = true;
+                emptyDescription = true;
                 document.getElementById("submit").setAttribute("disabled", "")
             }
         }
