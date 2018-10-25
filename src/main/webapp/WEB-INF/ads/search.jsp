@@ -20,9 +20,9 @@
     <h1>Here Are Your Search Results!</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <h5><a href="/ads/?id=${ad.id}">${ad.id}</a></h5>
+        <div class="col-md-4">
+            <h3><a href="/ads/?id=${ad.id}&seller=${ad.userId}">${ad.title}</h3>
+            <input id="ad.id" name="ad.id" class="form-control" type="hidden" value="${ad.id}">
             <p>${ad.description}</p>
         </div>
     </c:forEach>

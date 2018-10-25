@@ -14,8 +14,8 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h3>${ad.title}</h3>
-            <h5><a href="/ads/?id=${ad.id}&seller=${ad.userId}">${ad.id}</a></h5>
+            <h3><a href="/ads/?id=${ad.id}&seller=${ad.userId}">${ad.title}</h3>
+            <input id="ad.id" name="ad.id" class="form-control" type="hidden" value="${ad.id}">
             <p>${ad.description}</p>
         </div>
     </c:forEach>
