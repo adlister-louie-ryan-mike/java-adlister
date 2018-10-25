@@ -15,7 +15,7 @@
     </jsp:include>
 </head>
 <body class="">
-        <form action="/ads/edit/" method="POST">
+        <form action="/ads/edit/?userid=${user.id}" method="POST">
             <%--<c: var="ad" items="${ad}"></c:>--%>
             <div class="form-group col3">
                 <label for="title">Old Title: ${ad.title}</label>
@@ -26,6 +26,15 @@
                 <input id="description" name="description" class="form-control" type="text" placeholder="Updated Description">
                 <input id="ad.id" name="ad.id" class="form-control" type="hidden" value="${ad.id}">
             </div>
+                <div>
+                    <br>
+                    <p>Category</p>
+                    <select name="category">
+                        <c:forEach var="category" items="${categories}">
+                            <option value = "${category.categoryId}">${category.categoryDesc}</option>
+                        </c:forEach>
+                    </select>
+                </div>
             <input id="submit" type="submit" class="btn btn-primary col3" value="Update">
         </form>
 
