@@ -14,7 +14,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=1'">Jobs</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=1'">Jobs</h4>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=2'">Cars</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=2'">Cars</h4>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=3'">Toys</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=3'">Toys</h4>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=4'">Games</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=4'">Games</h4>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title" onclick="window.location='/ads?category=5'">Services</h4>
+                        <h4 class="card-title" onclick="window.location='/ads/byCategory?category=5'">Services</h4>
                     </div>
                 </div>
             </div>
