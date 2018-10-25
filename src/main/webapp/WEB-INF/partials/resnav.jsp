@@ -17,7 +17,7 @@
             let logHide = document.getElementsByClassName("user_out");
          </c:otherwise>
     </c:choose>
-    for(elem of logHide){
-        elem.style.display = "none";
+    for(choice of logHide){
+        choice.style.display = "none";
     }
 </script>
