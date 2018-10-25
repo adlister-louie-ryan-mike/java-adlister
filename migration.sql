@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS ads_categories (
 
 INSERT INTO categories (category_desc) values
 
-('Jobs'),
-('Cars'),
-('Toys'),
-('Games'),
+('Auto & Truck'),
+('Outdoor & Sports'),
+('Beards & Booze'),
+('Tools'),
 ('Services');
 
 
