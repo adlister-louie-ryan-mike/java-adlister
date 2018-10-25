@@ -26,7 +26,7 @@
                 <input id="password" name="password" class="form-control" type="password">
             <%--</div>--%>
             <%--<div class="container">--%>
-                <label id="passwordErrorMessage" class="text-red">${passwordErrorMessage}</label>
+                <label id="passwordErrorMessage" class="text-red" hidden>${passwordErrorMessage}</label>
                 <div id="passwordErrors" hidden>${passwordErrors}</div>
                 <div class="row">
                     <ol id="passwordCriteria">
@@ -55,12 +55,12 @@
     </jsp:include>
 
     <script>
-        let username = document.getElementById("username");
+        let username = document.getElementById("password");
         username.onkeyup = function(){
-            let usernameInput = document.getElementById("username").value;
+            let passwordInput = document.getElementById("password").value;
             // let password = document.getElementById("username").value;
             // let email = document.getElementById("email").value;
-            if(usernameInput.length > 0 ){
+            if(passwordInput.length > 7 ){
                 document.getElementById("submit").removeAttribute("disabled")
             }
         };
@@ -85,6 +85,8 @@
                 passwordList.appendChild(newNumberListItem);
             })
             document.getElementById("passwordCriteria").setAttribute("hidden","");
+            document.getElementById("passwordErrorMessage").removeAttribute("hidden");
+
         }
         console.log(errors);
 
