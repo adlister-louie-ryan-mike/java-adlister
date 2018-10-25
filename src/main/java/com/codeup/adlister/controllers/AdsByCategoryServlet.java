@@ -1,6 +1,8 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,16 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads/category")
+@WebServlet(name = "controllers.AdsByCategoryServlet", urlPatterns = "/ads/byCategory")
 public class AdsByCategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getCategoriesDao().all());
-        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+        Long searchedCategory = Long.parseLong(request.getParameter("category"));
 
-        // need to edit above
-        // will call logic from MySQLCategoriesDao to grab all ads with a specific category
-
+        request.setAttribute("ads", DaoFactory.getAdsDao().searchByAdCategory(searchedCategory));
+        request.getRequestDispatcher("/WEB-INF/ads/category.jsp").forward(request, response);
 
     }
 }
