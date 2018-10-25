@@ -9,5 +9,5 @@ public interface Users {
     Long insert(User user);
     User findUserById(Long userId);
     List<String> isValid(String passwordhere, String confirmhere, List<String> errorList);
-    void editUser(User user);
+    Long editUser(User user);
 }
