@@ -21,22 +21,22 @@ public class EditProfileServlet extends HttpServlet {
             //Gather information from the url to display to the sticky forms on the register page
             // if there were errors from a previous attempt.
 
-            String usernameError = request.getParameter("usernameError");
-            String usernameInput = request.getParameter("username");
+//            String usernameError = request.getParameter("usernameError");
+//            String usernameInput = request.getParameter("username");
             String emailInput = request.getParameter("email");
             String passwordErrors = request.getParameter("password");
             System.out.println(passwordErrors);
             String emailError = request.getParameter("emailTest");
             request.setAttribute("emailInput", emailInput);
-            request.setAttribute("usernameInput", usernameInput);
+//            request.setAttribute("usernameInput", usernameInput);
 
 
-            if (usernameError.equals("usernameError")) {
-                String usernameErrorMessage = "Username is already taken. Input a different username.";
-                request.setAttribute("usernameError", usernameErrorMessage);
-
-
-            }
+//            if (usernameError.equals("usernameError")) {
+//                String usernameErrorMessage = "Username is already taken. Input a different username.";
+//                request.setAttribute("usernameError", usernameErrorMessage);
+//
+//
+//            }
             if (!passwordErrors.isEmpty()) {
                 String passwordErrorMessage = "Invalid password! Ensure your password also contains the following:";
                 request.setAttribute("passwordErrorMessage", passwordErrorMessage);
@@ -56,7 +56,7 @@ public class EditProfileServlet extends HttpServlet {
         System.out.println(userId);
         User user = DaoFactory.getUsersDao().findUserById(userId);
         request.setAttribute("user", user);
-        System.out.println(user.getId() + user.getUsername() + user.getEmail());
+        System.out.println(user.getId() + user.getEmail());
 //        System.out.println(ad.getTitle());
         request.getRequestDispatcher("/WEB-INF/editprofile.jsp").forward(request, response);
 
@@ -69,7 +69,7 @@ public class EditProfileServlet extends HttpServlet {
         String oldUserName = updatedUser.getUsername();
 
         //Get all the parameters from the form inputs on the jsp.
-        String newUsername = request.getParameter("username");
+//        String newUsername = request.getParameter("username");
         String newEmail = request.getParameter("email");
         String newPassword = request.getParameter("password");
         String newConfirmPassword = request.getParameter("confirm_password");
@@ -94,12 +94,12 @@ public class EditProfileServlet extends HttpServlet {
 
         //Create the user from the form inputs and concatenate the username and email to a url string for future processing.
 //        User user = new User(newUsername, newEmail, newPassword);
-        updatedUser.setUsername(newUsername);
+//        updatedUser.setUsername(newUsername);
         updatedUser.setEmail(newEmail);
         updatedUser.setPassword(request.getParameter("password"));
         String url = "/profile/edit/?";
         url += "&userid=" + userId;
-        url += "&username=" + newUsername;
+//        url += "&username=" + newUsername;
         url += "&email=" + newEmail;
 
 
@@ -137,16 +137,16 @@ public class EditProfileServlet extends HttpServlet {
             Long editedUser = DaoFactory.getUsersDao().editUser(updatedUser);
 
             System.out.println(editedUser);
-            if (editedUser == 0 && !updatedUser.getUsername().equals(oldUserName)) {
-                url += "&usernameError=usernameError&password=null";
-                response.sendRedirect(url);
-
-            } else {
+//            if (editedUser == 0 && !updatedUser.getUsername().equals(oldUserName)) {
+//                url += "&usernameError=usernameError&password=null";
+//                response.sendRedirect(url);
+//
+//            } else {
                 request.getSession().setAttribute("user", updatedUser);
 //                DaoFactory.getUsersDao().editUser(updatedUser);
                 response.sendRedirect("/profile");
 //                response.sendRedirect("/login");
-            }
+//            }
         } else {
             //Redirect to the url for the register page is the password or email are incorrect
             url += "&usernameError=null";
