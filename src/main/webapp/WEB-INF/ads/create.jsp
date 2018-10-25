@@ -29,8 +29,63 @@
             </select>
             </div>
 
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="btn btn-block btn-primary" id="submit" disabled>
         </form>
     </div>
+
+    <script>
+        //Functions to check that the username is not blank. If the input is empty for a username, the submit button is disabled.
+        let title = document.getElementById("title");
+        let description = document.getElementById("description");
+
+        let emptyTitle = true;
+        let emptyDescription = true;
+
+
+        title.oninput = function(){
+            let titleInput = document.getElementById("title").value;
+            if(titleInput.length > 0 ){
+                document.getElementById("submit").removeAttribute("disabled");
+                console.log(emptyTitle);
+                emptyTitle = false;
+                console.log(emptyTitle);
+            }
+            else{
+                emptyUsername = true;
+            }
+        };
+
+        description.oninput = function(){
+            let descInput = document.getElementById("description").value;
+            if(descInput.length > 0 ){
+                document.getElementById("submit").removeAttribute("disabled");
+                console.log(emptyTitle);
+                emptyTitle = false;
+                console.log(emptyTitle);
+            }
+            else{
+                emptyUsername = true;
+            }
+        };
+
+        document.getElementById("submit").onmouseover = function(){
+            let titleInput = document.getElementById("title").value;
+            let descInput = document.getElementById("description").value;
+            if(titleInput.length > 0 && descInput.length > 0){
+                // document.getElementById("submit").removeAttribute("disabled")
+                console.log(emptyTitle, emptyDescription);
+                emptyTitle = false;
+                emptyDescription = false;
+                console.log(emptyTitle, emptyDescription);
+                document.getElementById("submit").removeAttribute("disabled")
+            }
+            else{
+                emptyTitle = true;
+                emptyDescription = true;
+                document.getElementById("submit").setAttribute("disabled", "")
+            }
+        }
+
+    </script>
 </body>
 </html>

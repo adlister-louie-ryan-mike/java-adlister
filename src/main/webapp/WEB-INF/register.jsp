@@ -46,9 +46,6 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block" id="submit" disabled>
         </form>
-
-
-
     </div>
     <jsp:include page="/WEB-INF/partials/resnav.jsp">
         <jsp:param name="logged_in" value="${sessionScope.logged_in}"/>
