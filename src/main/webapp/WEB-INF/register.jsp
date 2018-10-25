@@ -5,7 +5,7 @@
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
 </head>
-<body>
+<body id="body">
     <jsp:include page="partials/navbar.jsp" />
     <div class="container">
         <h1>Please fill in your information.</h1>
@@ -22,7 +22,7 @@
 
             </div>
             <div class="form-group">
-                <label for="password">Password (Must contain 8 or more characters</label>
+                <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             <%--</div>--%>
             <%--<div class="container">--%>
@@ -55,15 +55,43 @@
     </jsp:include>
 
     <script>
-        let username = document.getElementById("password");
-        username.onkeyup = function(){
-            let passwordInput = document.getElementById("password").value;
-            // let password = document.getElementById("username").value;
-            // let email = document.getElementById("email").value;
-            if(passwordInput.length > 7 ){
+
+        //Functions to check that the username is not blank. If the input is empty for a username, the submit button is disabled.
+        let username = document.getElementById("username");
+        let emptyUsername = true;
+
+        username.oninput = function(){
+            let usernameInput = document.getElementById("username").value;
+            if(usernameInput.length > 0 ){
                 document.getElementById("submit").removeAttribute("disabled")
+                console.log(emptyUsername);
+                emptyUsername = false;
+                console.log(emptyUsername);
+            }
+            else{
+                emptyUsername = true;
             }
         };
+
+        document.getElementById("submit").onmouseover = function(){
+            let usernameInput = document.getElementById("username").value;
+            if(usernameInput.length > 0 ){
+                // document.getElementById("submit").removeAttribute("disabled")
+                console.log(emptyUsername);
+                emptyUsername = false;
+                console.log(emptyUsername);
+            }
+            else{
+                emptyUsername = true;
+            }
+            if(!emptyUsername){
+                document.getElementById("submit").removeAttribute("disabled")
+            }else{
+                document.getElementById("submit").setAttribute("disabled", "")
+            }
+        }
+
+        //Password Error List code to display individual errors.
         let passwordList = document.getElementById("passwordList");
         let passwordErrors = document.getElementById("passwordErrors").innerText;
         console.log(passwordErrors)
@@ -89,12 +117,6 @@
 
         }
         console.log(errors);
-
-
-
-
-
-        // }
     </script>
 </body>
 </html>
