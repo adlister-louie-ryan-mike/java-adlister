@@ -11,4 +11,6 @@ public interface Categories {
     Long insert(Category category);
     //  find by category description method
     Category findByCategoryDesc(String categoryDesc);
+    //find by category Id
+    Category findByCategoryId(Long categoryId);
 }
