@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="card">
+                    <img class="card-img-top" height="100px" width="200px" src="images/jobs_pic.jpg" alt="jobs">
                     <div class="card-body">
                         <h4 class="card-title" onclick="window.location='/ads?category=1'">Jobs</h4>
                     </div>
