@@ -110,29 +110,29 @@ public class MySQLUsersDao implements Users {
     @Override
     public List<String> isValid(String passwordhere, String confirmhere, List<String> errorList) {
 
-        Pattern specailCharPatten = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+        Pattern specialCharPatten = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
         Pattern UpperCasePatten = Pattern.compile("[A-Z ]");
         Pattern lowerCasePatten = Pattern.compile("[a-z ]");
         Pattern digitCasePatten = Pattern.compile("[0-9 ]");
         errorList.clear();
 
         if (!passwordhere.equals(confirmhere)) {
-            errorList.add("password and confirm password does not match");
+            errorList.add("Password and confirm password does not match!!");
         }
         if (passwordhere.length() < 8) {
-            errorList.add("Password length must have at least 8 character !!");
+            errorList.add("Password length must have at least 8 characters!!");
         }
-        if (!specailCharPatten.matcher(passwordhere).find()) {
-            errorList.add("Password must have at least one special character !!");
+        if (!specialCharPatten.matcher(passwordhere).find()) {
+            errorList.add("Password must have at least one special character!!");
         }
         if (!UpperCasePatten.matcher(passwordhere).find()) {
-            errorList.add("Password must have at least one uppercase character !!");
+            errorList.add("Password must have at least one uppercase character!!");
         }
         if (!lowerCasePatten.matcher(passwordhere).find()) {
-            errorList.add("Password must have at least one lowercase character !!");
+            errorList.add("Password must have at least one lowercase character!!");
         }
         if (!digitCasePatten.matcher(passwordhere).find()) {
-            errorList.add("Password must have at least one digit character !!");
+            errorList.add("Password must have at least one digit character!!");
         }
 
         return errorList;
