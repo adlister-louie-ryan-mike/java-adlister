@@ -15,6 +15,7 @@
     </jsp:include>
 </head>
 <body class="">
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
         <form action="/ads/edit/?userid=${user.id}" method="POST">
             <%--<c: var="ad" items="${ad}"></c:>--%>
             <div class="form-group col3">
