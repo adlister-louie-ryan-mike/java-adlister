@@ -15,6 +15,8 @@
     </jsp:include>
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<h1>Ad Info!</h1>
 
 <div var="ad" items="${ad}">
     <div class="col-md-6">
@@ -29,6 +31,8 @@
             <p>Email: ${seller.email}</p>
     </div>
 </div>
+
+<p><a href="/ads">Go Back</a></p>
 
 
 
