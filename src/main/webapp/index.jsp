@@ -9,8 +9,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
-    <h1 class="ind_title">Welcome to ManLister!</h1>
-    <h4 id="ti_desc">"The web's best marketplace for homemade booze, powertools, and beard care products"</h4>
+    <h2 class="ind_title">Welcome to ManLister!</h2>
     <div class="row">
 
         <div class="col2">
@@ -33,6 +32,7 @@
             <img width="100px" height="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd64GmkY8sAgcSO2G8iWN7Dk-ZGt8gWwaLShlRRQeeEQqDDvBz" alt="plumb">
             <h4 class="card-title" onclick="window.location='/ads/byCategory?category=5'">Services</h4>
         </div>
+        <h4 id="ti_desc">"The web's best marketplace for homemade booze, powertools, and beard care products"</h4>
 </div>
 <%--<div>--%>
     <%--<div class="col2 center">--%>
