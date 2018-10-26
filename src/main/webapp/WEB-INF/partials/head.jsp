@@ -30,13 +30,26 @@
     .text-red{
         color: red;
     }
-    h1 h2 h3 h4 h5{
-        text-align: center;
-    }
+    /*h1 h2 h3 h4 h5{*/
+        /*text-align: center;*/
+    /**/
+    /*}*/
     img {
-        align-content: center;
+        /*margin-right: 10px;*/
+        padding: 5px;
+        /*align-content: center;*/
         width: 100%;
     }
+    .ind_title {
+        font-size: 100px;
+    }
 
+    #ti_desc {
+        font-size: 50px;
+    }
+
+    #serv {
+        margin-right: 10px;
+    }
 
 </style>
