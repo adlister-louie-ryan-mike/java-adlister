@@ -83,7 +83,12 @@ public class RegisterServlet extends HttpServlet {
                 passwordErrors += error;
             }
             url+= "&password="+passwordErrors;
+        }else{
+            url+= "&password="+null;
+
         }
+
+
 
         //
 //        Long newUser = DaoFactory.getUsersDao().insert(user);
